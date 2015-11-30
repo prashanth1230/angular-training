@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show and Hide</title>
+    <script src="lib/angular.js"></script>
+</head>
+<body data-ng-app>
+<label>Show only New Items </label>
+<input type="checkbox" data-ng-model="onlynew"/>
+
+<ul data-ng-switch on="onlynew">
+    <li data-ng-switch-when="true">Old item</li>
+    <li data-ng-switch-when="false">New item</li>
+    <li data-ng-switch-default>Default item</li>
+</ul>
+</body>
+</html>
