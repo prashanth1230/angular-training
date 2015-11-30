@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show and Hide</title>
+    <script src="lib/angular.js"></script>
+</head>
+<body data-ng-app>
+<label>Show only New Items </label>
+<input type="checkbox" data-ng-model="onlynew"/>
+
+<div data-ng-show="onlynew">text 1</div>
+<div data-ng-hide="onlynew">text 2</div>
+</body>
+</html>

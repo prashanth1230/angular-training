@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello world</title>
+    <script src="lib/angular.js"></script>
+</head>
+<body data-ng-app data-ng-init="message = 'My custom message'">
+<h1>{{message | uppercase}}</h1>
+
+<h1>{{message | lowercase}}</h1>
+
+<h1>{{message.length}}</h1>
+
+<input type="text" data-ng-model="message"/>
+<br/><br/>
+
+<div style="width: {{message.length*10}}px; height: 200px; background-color: orange"></div>
+</body>
+</html>
