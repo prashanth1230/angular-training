@@ -11,7 +11,7 @@
                     title: 'Batman',
                     fName: 'Bruce',
                     lName: 'Wayne',
-                    city: 'Gothem',
+                    city: 'Gotham',
                     power: 7,
                     releasedate: '2015-11-30',
                     price: 123.456789,
@@ -69,6 +69,8 @@
         <div class="well">
             <label>Filter Title : </label>
             <input data-ng-model="info"/>
+            <label>Filter City : </label>
+            <input data-ng-model="city">
         </div>
         <div class="col-xs-10 col-xs-offset-1">
             <table class="table">
@@ -82,7 +84,7 @@
                     <th data-ng-click="sortBy = 'releasedate'; rev = !rev">Release</th>
                     <th data-ng-click="sortBy = 'price'; rev = !rev">Ticket price</th>
                 </tr>
-                <tr data-ng-repeat="hero in heros | orderBy : sortBy : rev | filter : {title:info}">
+                <tr data-ng-repeat="hero in heros | orderBy : sortBy : rev | filter : {title:info, city: city}">
                     <td><img src="{{hero.photo}}" style="width:40px; align:absmiddle;"/></td>
                     <td>{{hero.title | uppercase}}</td>
                     <td>{{hero.fName}}</td>
