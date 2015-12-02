@@ -2,8 +2,8 @@
  * Created by a487037 on 12/01/2015.
  */
 (function () {
-    var herocontroller = function ($scope) {
-        $scope.heros = [
+    var herocontroller = function () {
+        this.heros = [
             {
                 title: 'Batman',
                 fName: 'Bruce',
@@ -54,14 +54,13 @@
                 price: 90.894567,
                 photo: 'images/phantom.jpg'
             }];
-        $scope.sortBy = 'title';
-        $scope.rev = false;
-        $scope.info = '';
-
-        $scope.sortIt = function () {
-            $scope.sortBy = arguments[0];
-            $scope.rev = !$scope.rev;
-        }
+        this.sortBy = 'title';
+        this.rev = false;
+        this.info = '';
+        this.sortIt = function () {
+            this.sortBy = arguments[0];
+            this.rev = !this.rev;
+        };
     };
     angular.module('app').controller('herocontroller', herocontroller);
 }());

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Mulitple Controllers</title>
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <script src="modules/appRouter.js"></script>
+    <script src="config/config.js"></script>
+    <script src="controllers/homecontroller.js"></script>
+    <script src="controllers/batcontroller.js"></script>
+    <script src="controllers/ironmancontroller.js"></script>
+
+</head>
+<body ng-app="app">
+<div class="navbar navbar-default">
+    <nav class="nav">
+        <ul>
+            <li><a href="#/">Home Page</a></li>
+            <li><a href="#/batman">Batman Page</a></li>
+            <li><a href="#/ironman">Iroman Page</a></li>
+        </ul>
+    </nav>
+</div>
+<div ng-view></div>
+</body>
+</html>

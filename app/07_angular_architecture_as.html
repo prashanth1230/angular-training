@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Architecture</title>
+    <script src="lib/angular.js"></script>
+    <script src="modules/app.js"></script>
+    <script src="controllers/herocontroller_as.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body data-ng-app="app" data-ng-controller="herocontroller as hf">
+<div class="container">
+    <div class="row">
+        <div class="well">
+            <label>Filter Title : </label>
+            <input data-ng-model="hf.info"/>
+            <label>Filter City : </label>
+            <input data-ng-model="hf.city">
+        </div>
+        <div class="col-xs-10 col-xs-offset-1">
+            <table class="table">
+                <tr>
+                    <th data-ng-click="hf.sortIt('photo')">Photo</th>
+                    <th data-ng-click="hf.sortIt('title')">Title</th>
+                    <th data-ng-click="hf.sortIt('fName')">First Name</th>
+                    <th data-ng-click="hf.sortIt('lName')">Last Name</th>
+                    <th data-ng-click="hf.sortIt('city')">City</th>
+                    <th data-ng-click="hf.sortIt('power')">Power</th>
+                    <th data-ng-click="hf.sortIt('releasedate')">Release</th>
+                    <th data-ng-click="hf.sortIt('price')">Ticket price</th>
+                </tr>
+                <tr data-ng-repeat="hero in hf.heros | orderBy : hf.sortBy : hf.rev | filter : {title:hf.info, city: hf.city}">
+                    <td><img src="{{hero.photo}}" style="width:40px; align:absmiddle;"/></td>
+                    <td>{{hero.title | uppercase}}</td>
+                    <td>{{hero.fName}}</td>
+                    <td>{{hero.lName}}</td>
+                    <td>{{hero.city}}</td>
+                    <td>{{hero.power}}</td>
+                    <td>{{hero.releasedate | date : 'dd-MMM-yyyy'}}</td>
+                    <td>{{hero.price | currency : 'Rs.'}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
