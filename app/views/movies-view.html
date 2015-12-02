@@ -1,0 +1,16 @@
+<div class="col-xs-8">
+    <span>Got the hero id : {{heroId}}</span>
+    <table class="table table-bordered">
+        <tr>
+            <th>Sl #</th>
+            <th>Title</th>
+            <th>Poster</th>
+        </tr>
+        <tr data-ng-repeat="movie in movies">
+            <td>{{movie.sl}}</td>
+            <td>{{movie.title}}</td>
+            <td><img data-ng-src="{{movie.poster}}"/></td>
+        </tr>
+    </table>
+    <button class="btn btn-info" data-ng-click="goBack()">Go Back</button>
+</div>

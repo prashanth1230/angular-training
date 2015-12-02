@@ -7,18 +7,18 @@
             <th>City</th>
             <th>Power</th>
             <th>Movies Acted</th>
-            <th>Power</th>
             <th>View Movies</th>
         </tr>
         <tr ng-repeat="hero in heroes">
             <td>{{hero.id}}</td>
             <td>{{hero.title}}</td>
-            <td>{{hero.photo}}</td>
+            <td><img data-ng-src="{{hero.photo}}" width="40" align="absmiddle"/></td>
             <td>{{hero.city}}</td>
             <td>{{hero.power}}</td>
-            <td>{{hero.power}}</td>
             <td>{{hero.movies}}</td>
-            <td>&nbsp;</td>
+            <td>
+                <a href="#/movies/{{hero.id}}" class="btn btn-primary">View Movies</a>
+            </td>
         </tr>
     </table>
 </div>
