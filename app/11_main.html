@@ -6,6 +6,7 @@
     <script src="lib/angular.js"></script>
     <script src="lib/angular-route.js"></script>
     <script src="modules/app-11.js"></script>
+    <script src="config/app-config-11.js"></script>
     <script src="controllers/heros-controller-11.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -13,6 +14,9 @@
 </head>
 <body data-ng-app="app" data-ng-controller="herosController">
 <div class="container">
+    <div class="navbar navbar-default">
+
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-xs-4">
@@ -20,30 +24,11 @@
                     Place holder
                 </form>
             </div>
-            <div class="col-xs-8">
-                <table class="table table-striped" border="0" cellspacing="5" cellpadding="5">
-                    <tr>
-                        <th>Sl #</th>
-                        <th>Title</th>
-                        <th>Photo</th>
-                        <th>City</th>
-                        <th>Power</th>
-                        <th>Movies Acted</th>
-                        <th>Power</th>
-                        <th>View Movies</th>
-                    </tr>
-                    <tr ng-repeat="hero in heroes">
-                        <td>{{hero.id}}</td>
-                        <td>{{hero.title}}</td>
-                        <td>{{hero.photo}}</td>
-                        <td>{{hero.city}}</td>
-                        <td>{{hero.power}}</td>
-                        <td>{{hero.power}}</td>
-                        <td>{{hero.movies}}</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                </table>
-            </div>
+            <!-- Other ways of creating view
+            <div data-ng-view></div>
+            <div class="ng-view"></div>
+            -->
+            <ng-view></ng-view>
         </div>
     </div>
 </div>
