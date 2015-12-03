@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Companies Value Service</title>
+    <script src="lib/angular.js"></script>
+    <script src="modules/app.js"></script>
+    <script src="controllers/firstcontroller-constantservice-14.js"></script>
+    <script src="controllers/secondcontroller-constantservice-14.js"></script>
+    <script src="services/constant-service.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body data-ng-app="app">
+<div class="container">
+    <div class="well" data-ng-controller="firstController">
+        Company Name : {{compName}}
+        Branch 1 : {{b1}}
+        Branch 2 : {{b2}}
+        Branch 3 : {{b3}}
+    </div>
+    <div class="well" data-ng-controller="secondController">
+        Company Name : {{compName}}
+        Branch 1 : {{b1}}
+        Branch 2 : {{b2}}
+        Branch 3 : {{b3}}
+    </div>
+</div>
+
+</body>
+</html>
