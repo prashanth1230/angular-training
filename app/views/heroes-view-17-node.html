@@ -1,0 +1,54 @@
+<div class="col-xs-4">
+    <form>
+        <div class="form-group">
+            <label for="ti1">Hero ID</label>
+            <input class="form-control" type="number" id="ti1" data-ng-model="id"/>
+        </div>
+        <div class="form-group">
+            <label for="ti2">Hero Title</label>
+            <input class="form-control" type="text" id="ti2" data-ng-model="title"/>
+        </div>
+        <div class="form-group">
+            <label for="ti3">Hero City</label>
+            <input class="form-control" type="text" id="ti3" data-ng-model="city"/>
+        </div>
+        <div class="form-group">
+            <label for="ti4">Hero Power</label>
+            <input class="form-control" min="1" max="10" type="range" id="ti4" data-ng-model="power"/>
+        </div>
+        <div class="form-group">
+            <label for="ti5">Hero Movies</label>
+            <input class="form-control" type="number" id="ti5" max="5" data-ng-model="movies"/>
+        </div>
+        <div class="form-group">
+            <label for="ti6">Hero Photo</label>
+            <input class="form-control" type="text" id="ti6" data-ng-model="photo"/>
+        </div>
+        <div class="form-group">
+            <input value="Add Hero" class="btn btn-primary" type="submit" data-ng-click="addHero()"/></div>
+    </form>
+</div>
+<div class="col-xs-8">
+    <table class="table table-striped" border="0" cellspacing="5" cellpadding="5">
+        <tr>
+            <th>Sl #</th>
+            <th>Title</th>
+            <th>Photo</th>
+            <th>City</th>
+            <th>Power</th>
+            <th>Movies Acted</th>
+            <th>View Movies</th>
+        </tr>
+        <tr ng-repeat="hero in heroes">
+            <td>{{hero.id}}</td>
+            <td>{{hero.title}}</td>
+            <td><img data-ng-src="{{hero.photo}}" width="40" align="absmiddle"/></td>
+            <td>{{hero.city}}</td>
+            <td>{{hero.power}}</td>
+            <td>{{hero.movies}}</td>
+            <td>
+                <a href="#/movies/{{hero.id}}" class="btn btn-primary">View Movies</a>
+            </td>
+        </tr>
+    </table>
+</div>

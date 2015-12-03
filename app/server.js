@@ -128,6 +128,10 @@ app.get('/heros', function (request, response) {
     response.json(heros);
 });
 
+app.post('/heros', function (request, response) {
+    console.log('Got the POST');
+});
+
 app.listen(1234, function () {
     console.log('Your server is running on the port 1234');
 });
