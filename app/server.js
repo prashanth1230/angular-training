@@ -131,6 +131,18 @@ app.post('/heros', function (request, response) {
     response.send(heros);
 });
 
+app.put('/movies/:id', function (request, response) {
+    var id = request.params.id;
+    for(var i=0; i < heros.length; i++) {
+        if(heros[i].id == id) {
+            heros[i].movieslist.push(request.body);
+            console.log('Movie pushed in..');
+            console.log(JSON.stringify(heros[i]));
+            response.send(heros);
+        }
+    }
+});
+
 app.listen(1234, function () {
     console.log('Your server is running on the port 1234');
 });
