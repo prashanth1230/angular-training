@@ -8,17 +8,29 @@
             alert(status);
         });
 
-        $scope.id = '';
         $scope.title = '';
         $scope.power = '';
         $scope.city = '';
-        $scope.power = '';
-        $scope.movies = '';
         $scope.photo = '';
 
         $scope.addHero = function () {
-            alert('Do you really want to add a hero?');
-            $http.post('/heros');
+            var body = {
+                id: $scope.heroes.length + 1,
+                title: $scope.title,
+                power: $scope.power,
+                city: $scope.city,
+                photo: $scope.photo
+            };
+            $http.post('/heros', body).success(function (r, s, x) {
+                $scope.heroes = r;
+                console.log('Data sent successfully');
+                $scope.title = '';
+                $scope.power = '';
+                $scope.city = '';
+                $scope.photo = '';
+            }).error(function (r, s, x) {
+                console.log('Something went wrong');
+            });
         }
 
     };

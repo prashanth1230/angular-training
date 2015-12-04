@@ -2,14 +2,15 @@
  * Created by a487037 on 12/03/2015.
  */
 var express = require('express');
+var bodyParser = require('body-parser')
 var app = express();
 
 app.use(express.static(__dirname));
+app.use(bodyParser.json());
 
 var heros = [
     {
         "id": 1,
-        "movies": 3,
         "title": "Batman",
         "city": "Gothem",
         "power": 8,
@@ -34,7 +35,6 @@ var heros = [
     },
     {
         "id": 2,
-        "movies": 3,
         "title": "Superman",
         "city": "Metropolis",
         "power": 8,
@@ -59,7 +59,6 @@ var heros = [
     },
     {
         "id": 3,
-        "movies": 3,
         "title": "Ironman",
         "city": "New York",
         "power": 3,
@@ -84,7 +83,6 @@ var heros = [
     },
     {
         "id": 4,
-        "movies": 1,
         "title": "Phantom",
         "city": "Bhangala",
         "power": 6,
@@ -99,7 +97,6 @@ var heros = [
     },
     {
         "id": 5,
-        "movies": 3,
         "title": "Spiderman",
         "city": "New York",
         "power": 8,
@@ -129,7 +126,9 @@ app.get('/heros', function (request, response) {
 });
 
 app.post('/heros', function (request, response) {
-    console.log('Got the POST');
+    heros.push(request.body);
+    console.log(request.body);
+    response.send(heros);
 });
 
 app.listen(1234, function () {

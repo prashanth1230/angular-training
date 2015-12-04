@@ -1,4 +1,29 @@
+<div class="col-xs-4">
+    <div class="page-heading">
+        <h1>
+            Add Movie
+        </h1>
+    </div>
+    <form>
+        <div class="form-group">
+            <label for="ti2">Movie Title</label>
+            <input class="form-control" type="text" ng-model="title"/>
+        </div>
+        <div class="form-group">
+            <label for="ti6">Movie Poster</label>
+            <input class="form-control" type="text" ng-model="photo"/>
+        </div>
+        <div class="form-group">
+            <input ng-click="addMovie()" value="Add Movie" class="btn btn-primary" type="submit"/>
+        </div>
+    </form>
+</div>
 <div class="col-xs-8">
+    <div class="page-heading">
+        <h1>
+            Movies Listed
+        </h1>
+    </div>
     <span>Got the hero id : {{heroId}}</span>
     <table class="table table-bordered">
         <tr>
