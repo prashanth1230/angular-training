@@ -13,14 +13,15 @@
     <script>
         angular.module('app', [])
                 .controller('firstController', function ($scope) {
-
+                    $scope.title = 'Hello World'
                 });
         angular.module('app')
                 .directive('myDir', function () {
                     return {
-                        template: '<h1>Hello</h1>',
-                        replace: true,
-                        restrict: 'C' //This enables only CSS class
+                        template: '<div><h1>{{title}}</h1><input type="text" data-ng-model="title"></div>',
+                        replace: true, //This replaces the element
+                        restrict: 'ECA', //This enables only CSS class, Element and Attribute
+                        scope: {}
                     }
                 });
     </script>
