@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hero List</title>
+    <script src="lib/angular.js"></script>
+    <script>
+        angular
+                .module("app", [])
+                .controller("firstController", function ($scope) {
+                    $scope.title = "Batman";
+                });
+        angular
+                .module("app").filter("myfilter", function () {
+            return function (text, arg1) {
+                return "Hello there " + arg1 + text;
+            };
+        })
+    </script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body ng-app="app" ng-controller="firstController">
+<h1>{{title | myfilter: 'Mr.'}}</h1>
+</body>
+</html>
