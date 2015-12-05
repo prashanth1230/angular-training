@@ -35,7 +35,7 @@ app.put('/movies/:id', function (request, response) {
         heros = JSON.parse(data);
         for (var i = 0; i < heros.length; i++) {
             if (heros[i].id == id) {
-                if(heros[i].movieslist === null || typeof heros[i].movieslist === 'undefined') {
+                if (heros[i].movieslist === null || typeof heros[i].movieslist === 'undefined') {
                     heros[i].movieslist = [];
                 }
                 heros[i].movieslist.push(request.body);

@@ -25,7 +25,7 @@
         };
 
         $scope.addMovie = function () {
-            if($scope.movies === null || typeof $scope.movies === 'undefined') {
+            if ($scope.movies === null || typeof $scope.movies === 'undefined') {
                 $scope.movies = [];
             }
             var body = {
